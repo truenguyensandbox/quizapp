@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-2">🎯 Quiz App</h1><div class="text-center mb-3"><button id="musicBtn" class="btn btn-outline-dark" onclick="toggleMusic()">🔇 Music: Off</button></div>
+    <div class="mb-3 text-center">
+      <label for="categorySelect" class="form-label">Choose a Category:</label>
+      <select id="categorySelect" class="form-select w-auto mx-auto" onchange="fetchQuestions()">
+        <option value="">Any</option>
+        <option value="9">General Knowledge</option>
+        <option value="21">Sports</option>
+        <option value="23">History</option>
+        <option value="17">Science & Nature</option>
+      </select>
+    </div>
+    <div id="quiz" class="card p-4 shadow-sm">
+      <h5 id="question" class="mb-3"></h5>
+      <div id="answers" class="d-grid gap-2 mb-3"></div>
+      <div id="feedback" class="text-info mb-2"></div>
+      <button id="nextBtn" class="btn btn-primary" disabled>Next Question</button>
+    </div>
+    <div id="scoreContainer" class="text-center mt-4 d-none">
+      <h3>Your Score: <span id="score">0</span>/10</h3><p>🏆 High Score: <span id="highScore">0</span></p>
+      <button class="btn btn-success mt-3" onclick="startQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
